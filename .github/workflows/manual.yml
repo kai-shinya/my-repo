@@ -2,13 +2,13 @@ name: Manual
 on:
   workflow_dispatch:
     inputs:
-    greeteing:
-      type: string
-      default: Hello
-      required: true
-      description: A cheerful wrod
+      greeting:  # 👈 修正①：インデントを下げ、スペルを修正
+        type: string
+        default: Hello
+        required: true
+        description: A cheerful word # 👈 修正（タイポ）
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo"${{inputs_greeting}}
+      - run: echo "${{ inputs.greeting }}" # 👈 修正②③：半角スペースを入れ、ドット接続に修正
